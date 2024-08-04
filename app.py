@@ -1,13 +1,24 @@
 import streamlit as st
 import re
 
+# def convert_gpt_to_typora_qiita(text):
+#     inline_math = re.compile(r'\\\((.*?)\\\)')
+#     text = inline_math.sub(r'$\1$', text)
+#     block_math = re.compile(r'\\\[(.*?)\\\]')
+#     text = block_math.sub(r'$$\1$$', text)
+#     return text
+#
+
 def convert_gpt_to_typora_qiita(text):
+    # 行内の数式を検出して変換（例: \(x^2 + y^2 = z^2\) を $x^2 + y^2 = z^2$ に）
     inline_math = re.compile(r'\\\((.*?)\\\)')
     text = inline_math.sub(r'$\1$', text)
-    block_math = re.compile(r'\\\[(.*?)\\\]')
-    text = block_math.sub(r'$$\1$$', text)
-    return text
 
+    # ブロックの数式を検出して変換（例: \[x^2 + y^2 = z^2\] を $$x^2 + y^2 = z^2$$ に）
+    block_math = re.compile(r'\\\[([^\\]+)\\\]')
+    text = block_math.sub(r'$$\1$$', text)
+
+    return text
 st.title("Markdown Converter")
 
 col1, col2 = st.columns(2)
