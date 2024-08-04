@@ -1,51 +1,44 @@
+Here is the revised translation with the "Installation" section removed:
+
+---
 
 # Markdown Converter App
 
-このMarkdown Converter Appは、ChatGPT形式のMarkdown文書をTyporaやQiitaで使う形式に変換するStreamlitアプリケーションです。左側に元のMarkdownを入力し、変換ボタンを押すことで右側に変換後のMarkdownが表示されます。このアプリは特に、数式を含むMarkdown文書の変換に有効です。
+This Markdown Converter App is a Streamlit application that converts ChatGPT-style Markdown documents into a format usable by Typora and Qiita. You can input the original Markdown on the left side, and after pressing the convert button, the converted Markdown will be displayed on the right. This app is particularly effective for converting Markdown documents containing equations.
 
-## 特徴
+[Access the app here](https://texconverter.streamlit.app/).
 
-- **シンプルなUI**: 誰でも簡単に使用できるクリーンなインターフェースを提供します。
-- **即時プレビュー**: 変換後のMarkdownを即座にプレビューすることができます。
-- **数式の変換**: LaTeX形式の数式をMathJax互換の形式に変換します。
+![Texconverter](https://github.com/user-attachments/assets/a143187d-b48f-4fe1-9a6c-2d28d6561cf9)
 
-## セットアップ方法
+## Features
 
-このアプリをローカルで実行するには、以下の手順に従ってください。
+- **Simple UI**: Provides a clean interface that anyone can use easily.
+- **Instant Preview**: Allows you to preview the converted Markdown immediately.
+- **Equation Conversion**: Converts LaTeX-style equations into MathJax-compatible format.
 
-### 前提条件
+## Setup Instructions
 
-- Python 3.6以上
+To run this app locally, follow these steps:
+
+### Prerequisites
+
+- Python 3.6 or higher
 - pip
 
-### インストール方法
+### Running the App
 
-1. リポジトリをクローンするか、ソースコードをダウンロードします。
-   ```
-   git clone [リポジトリURL]
-   cd [クローンしたディレクトリ]
-   ```
-
-2. 必要なPythonライブラリをインストールします。
-   ```
-   pip install -r requirements.txt
-   ```
-
-### 実行方法
-
-Streamlitサーバーを起動します。
+Start the Streamlit server:
 ```
 streamlit run app.py
 ```
-ブラウザが自動的に開かない場合は、`http://localhost:8501`にアクセスしてください。
+If the browser does not open automatically, please access `http://localhost:8501`.
 
-## 使い方
+## Usage
 
-1. 左側のテキストボックスに変換したいMarkdown文書を貼り付けます。
-2. 「Convert」ボタンを押します。
-3. 右側に変換後のMarkdownが表示されます。Markdownとしてのプレビューも利用できます。
+1. Paste the Markdown document you want to convert into the text box on the left side.
+2. Press the "Convert" button.
+3. The converted Markdown will be displayed on the right, along with a preview as Markdown.
 
-## ライセンス
+## License
 
-このプロジェクトは[MITライセンス](LICENSE)の下で公開されています。詳細は`LICENSE`ファイルを参照してください。
-
+This project is released under the [MIT License](LICENSE). For details, refer to the `LICENSE` file.
