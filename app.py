@@ -10,13 +10,16 @@ import re
 #
 
 def convert_gpt_to_typora_qiita(text):
-    # 行内の数式を検出して変換（例: \(x^2 + y^2 = z^2\) を $x^2 + y^2 = z^2$ に）
+    # 行内の数式を検出して変換
     inline_math = re.compile(r'\\\((.*?)\\\)')
     text = inline_math.sub(r'$\1$', text)
 
-    # ブロックの数式を検出して変換（例: \[x^2 + y^2 = z^2\] を $$x^2 + y^2 = z^2$$ に）
-    block_math = re.compile(r'\\\[([^\\]+)\\\]')
+    # ブロックの数式を検出して変換
+    # ここでパターンを `\[(.*?)\]` から改善しています。
+    block_math = re.compile(r'\\\[([\s\S]*?)\\\]')
     text = block_math.sub(r'$$\1$$', text)
+
+    return text
 
     return text
 st.title("Markdown Converter")
